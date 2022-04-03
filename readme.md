@@ -2,7 +2,8 @@
 
 Triggers USB playback of a yamaha WXA-50 amplifier at a specified time.
 
-The timezone is fixed to german as of now. I used this on an esp32, I guess it works with various other boards as well.
+The timezone is fixed to german as of now. I used this on an esp32, I guess it would work with
+various other boards as well if WiFiMulti is changed to something generic.
 
 ```
 Waiting for WiFi...
