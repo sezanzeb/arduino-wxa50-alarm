@@ -36,7 +36,7 @@ put
 #define WXA_HOSTNAME "WXA-50"
 ```
 
-into `arduino-wxa50-alarm/wifiCredentials.cpp`
+into `arduino-wxa50-alarm/config.cpp`
 
 ## Building and Flashing
 
