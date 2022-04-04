@@ -31,8 +31,8 @@ put
 ```cpp
 #define WIFI_SSID "foo"
 #define WIFI_PASSWORD "bar"
-#define ALARM_HOUR 8
-#define ALARM_MINUTE 0
+#define ALARM_HOUR 8  # 0-24
+#define ALARM_MINUTE 0  # 0-60
 #define WXA_HOSTNAME "WXA-50"
 ```
 
