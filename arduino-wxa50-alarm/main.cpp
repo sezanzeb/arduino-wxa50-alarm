@@ -20,6 +20,7 @@ void play() {
     // TODO only continue if response OK
     post(R"(<YAMAHA_AV cmd="PUT"><Main_Zone><Power_Control><Power>On</Power></Power_Control></Main_Zone></YAMAHA_AV>)");
     post(R"(<YAMAHA_AV cmd="PUT"><Main_Zone><Input><Input_Sel>USB</Input_Sel></Input></Main_Zone></YAMAHA_AV>)");
+    post(R"(<YAMAHA_AV cmd="PUT"><Main_Zone><Volume><Lvl><Val>-450</Val><Exp>1</Exp><Unit>dB</Unit></Lvl></Volume></Main_Zone></YAMAHA_AV>)");
     // it won't start playing until any song selected. this also starts playing
     post(R"(<YAMAHA_AV cmd="PUT"><USB><List_Control><Direct_Sel>Line_1</Direct_Sel></List_Control></USB></YAMAHA_AV>)");
     // shuffle
@@ -42,7 +43,7 @@ void loop() {
     // calculate how many minutes ago the alarm was supposed to trigger
     int deltaMinutes = (hours - ALARM_HOUR) * 60 + (minutes - ALARM_MINUTE);
 
-    if (!triggered && deltaMinutes < MAX_DELTA && deltaMinutes > 0) {
+    if (!triggered && deltaMinutes < MAX_DELTA && deltaMinutes >= 0) {
         // TODO check amplifier response
         Serial.println("Alarm triggers now");
         play();
