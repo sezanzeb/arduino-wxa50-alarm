@@ -48,6 +48,14 @@ press and hold the BOOT button on the esp32 so that it starts flashing.
 
 ctrl + a, then k and then y to stop the log output. It needs to be stopped before flashing again.
 
+## Curl
+
+To test controlling the amplifier, curl can be used:
+
+```
+curl --data '<YAMAHA_AV cmd="PUT"><Main_Zone><Power_Control><Power>On</Power></Power_Control></Main_Zone></YAMAHA_AV>' wxa-50/YamahaRemoteControl/ctrl --verbose
+```
+
 ## Resources
 
 - https://dev.to/stepanvrany/esp32-with-arduino-cli-36mh < actually good
